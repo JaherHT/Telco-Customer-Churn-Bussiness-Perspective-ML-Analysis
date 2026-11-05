@@ -1,0 +1,5 @@
+strategy,configs evaluated,time (s),best CV F1,best params
+Grid search,32,26.5,0.6299,"{'C': 0.03, 'class_weight': 'balanced', 'l1_ratio': 0.0}"
+Random search,32,27.8,0.6299,"{'class_weight': 'balanced', 'C': 0.03, 'l1_ratio': 0.0}"
+TPE (Optuna),32,24.0,0.6299,"{'C': 0.03, 'l1_ratio': 0.0, 'class_weight': 'balanced'}"
+NSGA-II (multi-objective),32,29.5,0.6299,"{'C': 0.03, 'l1_ratio': 0.0, 'class_weight': 'balanced'}"

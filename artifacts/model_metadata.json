@@ -1,0 +1,68 @@
+{
+  "model": "LogisticRegression inside sklearn Pipeline",
+  "params": {
+    "C": 0.3,
+    "l1_ratio": 1.0,
+    "class_weight": "balanced"
+  },
+  "raw_features": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "numeric_features": [
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "categorical_features": [
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod"
+  ],
+  "business_contact_share": 0.6877884274050409,
+  "business_cutoff": 0.17711696889728507,
+  "business_assumptions_hypothetical": {
+    "retention_rate": 0.25,
+    "value_months": 6,
+    "offer_cost": 10.0
+  },
+  "test_metrics": {
+    "accuracy": 0.7388218594748048,
+    "precision": 0.5051369863013698,
+    "recall": 0.7887700534759359,
+    "f1": 0.615866388308977,
+    "roc_auc": 0.8421969051125061
+  },
+  "sklearn_version": "1.6.1",
+  "seed": 42
+}

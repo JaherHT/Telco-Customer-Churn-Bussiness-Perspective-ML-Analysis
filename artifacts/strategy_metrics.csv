@@ -1,0 +1,5 @@
+,accuracy,precision,recall,f1,roc_auc
+Grid search,0.7524,0.522,0.7946,0.6299,0.8449
+Random search,0.7501,0.5189,0.802,0.6299,0.8461
+TPE (Optuna),0.7524,0.522,0.7946,0.6299,0.8449
+NSGA-II (multi-objective),0.7524,0.522,0.7946,0.6299,0.8449
