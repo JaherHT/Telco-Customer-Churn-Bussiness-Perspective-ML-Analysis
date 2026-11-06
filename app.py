@@ -140,13 +140,14 @@ def section_performance():
                                                  "best CV F1": st.column_config.NumberColumn(format="%.4f")})
     if table["best CV F1"].max() - table["best CV F1"].min() < 5e-4:
         st.caption(f"All four strategies reach the same CV F1 ({table['best CV F1'].max():.4f}); they differ in time.")
+    table = table.assign(short=table["strategy"].str.split(" ").str[0])   # Grid, Random, TPE, NSGA-II
     a, b = st.columns(2)
-    fig = px.bar(table, x="strategy", y="best CV F1", text=table["best CV F1"].map("{:.4f}".format),
+    fig = px.bar(table, x="short", y="best CV F1", text=table["best CV F1"].map("{:.4f}".format),
                  color_discrete_sequence=[STAY], labels={"strategy": "", "best CV F1": ""})
     fig.update_traces(textposition="outside", cliponaxis=False, marker_line_width=0)
     fig.update_layout(title="Best CV F1", yaxis_range=[0, 1], margin=dict(t=44, b=0, l=0, r=0), bargap=0.45)
     a.plotly_chart(ui.style_fig(fig))
-    fig = px.bar(table, x="strategy", y="time (s)", text=table["time (s)"].map("{:.1f}".format),
+    fig = px.bar(table, x="short", y="time (s)", text=table["time (s)"].map("{:.1f}".format),
                  color_discrete_sequence=[AMBER], labels={"strategy": "", "time (s)": ""})
     fig.update_traces(textposition="outside", cliponaxis=False, marker_line_width=0)
     fig.update_layout(title="Search time (s)", margin=dict(t=44, b=0, l=0, r=0), bargap=0.45)
@@ -189,7 +190,7 @@ def section_performance():
     left, right = st.columns([1.1, 1])
     fig = px.imshow(cm, text_auto=True, color_continuous_scale=[[0, "#FFFFFF"], [1, "#9CC9C4"]],
                     x=["Predicted stays", "Predicted leaves"], y=["Actually stayed", "Actually left"])
-    fig.update_layout(coloraxis_showscale=False, margin=dict(t=10, b=0, l=0, r=0))
+    fig.update_layout(coloraxis_showscale=False, margin=dict(t=10, b=40, l=0, r=0))
     left.plotly_chart(ui.style_fig(fig, 300))
     match = all(abs(mt[k] - tm[k]) < 1e-9 for k in tm)
     (right.success if match else right.warning)(
@@ -322,7 +323,7 @@ def section_business():
                              line=dict(color=SOFT, dash="dash", width=1.5)))
     fig.add_vline(x=r["k"] / r["n"], line_color=CHURN, line_dash="dot")
     fig.update_layout(title="Net value by share contacted (hypothetical)", xaxis_title="Share contacted",
-                      yaxis_title="Net value ($)", xaxis_tickformat=".0%", margin=dict(t=44, b=40, l=0, r=0))
+                      yaxis_title="Net value ($)", xaxis_tickformat=".0%", margin=dict(t=44, b=80, l=0, r=0))
     st.plotly_chart(ui.style_fig(fig))
 
     st.subheader("Risk segments (test set)")

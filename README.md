@@ -5,6 +5,27 @@ A Streamlit app for a machine learning course project. It loads a logistic-regre
 **Live app:** _add the Streamlit Community Cloud URL_
 **Repository:** _add the GitHub URL_
 
+## Screenshots
+
+| Tab | Preview |
+|---|---|
+| Exploratory Data Analysis | [![EDA](docs/screenshots/app_1_exploratory_analysis.png)](docs/screenshots/app_1_exploratory_analysis.png) |
+| Model Performance | [![Model performance](docs/screenshots/app_2_model_performance.png)](docs/screenshots/app_2_model_performance.png) |
+| Prediction & Explainability | [![Prediction](docs/screenshots/app_3_prediction_explainability.png)](docs/screenshots/app_3_prediction_explainability.png) |
+| Business Application | [![Business](docs/screenshots/app_4_business_application.png)](docs/screenshots/app_4_business_application.png) |
+
+## Key figures from the notebook
+
+![Exploratory overview](docs/figures/nb_1_eda_overview.png)
+
+![Pareto front](docs/figures/nb_2_pareto_front.png)
+
+![Test confusion matrix and ROC](docs/figures/nb_3_test_confusion_roc.png)
+
+![Targeting value](docs/figures/nb_4_targeting_value.png)
+
+![SHAP importance](docs/figures/nb_5_shap_importance.png)
+
 ## Run locally
 
 Requires Python 3.12.
